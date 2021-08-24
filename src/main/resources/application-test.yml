@@ -1,14 +1,14 @@
 spring:
-  profiles: test
 
+# MariaDB
   datasource:
     hikari:
       driver-class-name: org.mariadb.jdbc.Driver
-      jdbc-url: jdbc:mariadb://cabon.cdspom5j0apx.ap-northeast-2.rds.amazonaws.com:3306/cabon
+      jdbc-url: jdbc:mariadb://cabon.cdspom5j0apx.ap-northeast-2.rds.amazonaws.com:3306/dev
       username: admin
       password: adminadmin
 
-# # H2
+ # H2
 #  datasource:
 #    url: jdbc:h2:tcp://localhost/~/test
 #    username: sa
@@ -23,3 +23,5 @@ spring:
       ddl-auto: create-drop
       dialect: org.hibernate.dialect.MariaDB103Dialect
     show-sql: true
+
+

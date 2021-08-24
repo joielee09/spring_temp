@@ -1,18 +1,31 @@
+server:
+  port: 8083
+  tomcat:
+    max-connections: 10000
+    max-threads: 200
+    min-spare-threads: 1
+  shutdown: graceful
+jackson:
+  property-naming-strategy: SNAKE_CASE
+application:
+  name: carbon-zero
+servlet:
+  charset: UTF-8
+  enable: true
+  force: ture
+
 spring:
-  jackson:
-    property-naming-strategy: SNAKE_CASE
-  application:
-    name: carbon-zero
-  server:
-    port: 8082
-    tomcat:
-      max-connections: 10000
-      max-threads: 200
-      min-spare-threads: 1
-    shutdown: graceful
-  servlet:
-    charset: UTF-8
-    enable: true
-    force: ture
   profiles:
     active: test
+
+---
+
+spinrg:
+  profiles:
+    active: prod
+
+---
+
+spring:
+  profiles:
+    active: dev
