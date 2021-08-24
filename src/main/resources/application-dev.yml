@@ -1,0 +1,23 @@
+spring:
+  profiles: dev
+
+  loggin:
+    level:
+      org.springframework.web.info
+
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+      connection-init-sql: SET GLOBAL time_zone = 'Asia/Seoul';
+    url: jdbc:mariadb://localhost:3306/dev
+    username: root
+    password: pass
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        default_schema: public
+    show-sql: true
